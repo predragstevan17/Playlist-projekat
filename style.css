@@ -1,59 +1,121 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
-body{
-    background-color: #242424;
-    color: antiquewhite;
-    font-family: Arial, Helvetica, sans-serif;
+
+body {
+    background-color: #181818;
+    color: #dadada;
+    font-family: 'Montserrat', sans-serif;
     padding: 20px 0;
 }
-.container{
+
+.title {
+    text-align: center;
+}
+
+h1 {
+    color: #f1f1f1;
+}
+
+.title input {
+    background-color: #f1f1f1;
+    width: 200px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    height: 30px;
+    color: #181818;
+    font-size: 18px;
+    margin: 20px auto;
+    padding: 5px;
+}
+
+.container {
     width: 90%;
     margin: auto;
 }
-.form{
+
+.form {
     width: 50%;
+    margin: auto;
+    text-align: center;
 }
-.playlist{
-}
+
+.playlist {}
+
 table {
     width: 100%;
     border-collapse: collapse;
 }
+
 th {
     text-align: left;
-    border-bottom: 1px solid antiquewhite;
+    border-bottom: 1px solid #333333;
     padding: 8px 10px;
+    color: #f1f1f1;
+    font-size: 20px;
 }
-td{
-    border-bottom: 1px solid antiquewhite;
+
+td {
+    border-bottom: 1px solid #333333;
     padding: 8px 10px;
+    font-size: 16px;
 }
-tbody tr:hover{
+
+tbody tr:hover {
     background-color: #333333;
 }
-#song-input-form{
+
+#song-input-form {
     padding: 20px 0;
-    
 }
-input{
+
+.form input {
     display: inline-block;
     margin-bottom: 20px;
     width: 100%;
     outline: none;
-    border:none;
+    border: none;
     height: 30px;
+    background-color: #dadada;
+    border-radius: 5px;
+    font-size: 20px;
+    color: #333333;
+    padding: 10px;
 }
-button{
-    width: 100px;
-    background-color: #00bc48;
-    color: antiquewhite;
-    outline: none;
-    border:none;
-    padding: 8px 12px;
 
+button {
+    width: 100px;
+    background-color: #1db954;
+    color: #e4fff1;
+    outline: none;
+    border: none;
+    padding: 8px 12px;
     border-radius: 20px;
     text-transform: uppercase;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #1ed760;
+}
+
+button:active {
+    background-color: #1aa34a;
+}
+
+body {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4c4c4c+0,181818+100 */
+    background: #4c4c4c;
+    /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #4c4c4c 0%, #181818 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #4c4c4c 0%, #181818 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #4c4c4c 0%, #181818 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#181818', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
 }
