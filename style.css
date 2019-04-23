@@ -15,6 +15,8 @@ body {
     text-align: center;
 }
 
+
+
 h1 {
     color: #f1f1f1;
 }
@@ -26,15 +28,34 @@ h1 {
     outline: none;
     border: none;
     height: 30px;
-    color: #181818;
+    color: #333333;
     font-size: 18px;
     margin: 20px auto;
-    padding: 5px;
+    padding-left: 30px;
+}
+.title input::placeholder{
+    
+}
+
+.input-container {
+    position: relative;
+    display: inline-block;
+}
+
+.input-container::before{
+    position: absolute;
+    top: 50%;
+    left: 8px;
+    content: '\f002';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    transform: translateY(-50%);
 }
 
 .container {
     width: 90%;
     margin: auto;
+    min-height: 100vh;
 }
 
 .form {
@@ -68,6 +89,25 @@ tbody tr:hover {
     background-color: #333333;
 }
 
+.remove {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    border:none;
+    outline:none;
+    font-size: 20px;
+    border-radius: 50%;
+    background-color: #4c4c4c;
+    color: #dadada;
+    cursor: pointer;
+}
+
+.fa-times{
+    pointer-events: none;
+}
+
 #song-input-form {
     padding: 20px 0;
 }
@@ -86,7 +126,7 @@ tbody tr:hover {
     padding: 10px;
 }
 
-button {
+.enter-song {
     width: 100px;
     background-color: #1db954;
     color: #e4fff1;
@@ -98,11 +138,11 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+.enter-song:hover {
     background-color: #1ed760;
 }
 
-button:active {
+.enter-song:active {
     background-color: #1aa34a;
 }
 
