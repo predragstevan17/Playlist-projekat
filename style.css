@@ -39,6 +39,10 @@ h2 {
     
 }
 
+#song-count{
+    text-align: center;
+}
+
 .input-container {
     position: relative;
     display: inline-block;
@@ -87,8 +91,16 @@ td {
     font-size: 16px;
 }
 
+#clear-all td{
+    border: none;  
+}
+
 tbody tr:hover {
     background-color: #333333;
+}
+
+#clear-all:hover{
+    background-color: transparent;
 }
 
 .remove {
@@ -114,7 +126,25 @@ tbody tr:hover {
 .fa-times{
     pointer-events: none;
 }
+.clear-all{
+    /* width: 100px; */
+    background-color: #b92a1d;
+    /* background-color: #19a4aa; */
+    color: #e4fff1;
+    outline: none;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
 
+.clear-all:hover{
+    background-color: #d33324;
+    transform: scale(1.1);
+}
 #song-input-form {
     padding: 20px 0;
 }
@@ -134,16 +164,17 @@ tbody tr:hover {
 }
 
 .enter-song {
-    width: 100px;
+    /* width: 100px; */
     background-color: #1db954;
     /* background-color: #19a4aa; */
     color: #e4fff1;
     outline: none;
     border: none;
-    padding: 8px 12px;
+    padding: 8px 20px;
     border-radius: 20px;
     text-transform: uppercase;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .enter-song:hover {
@@ -174,7 +205,7 @@ body {
 .message{
     position: absolute;
     top: 10%;
-    color: #fff;
+    color: #e4fff1;
     padding: 10px;
     border-radius: 5px;
 }
@@ -191,8 +222,9 @@ body {
     background-color: #1aa34a;
     left: 10%;
 }
-.message.fail{
-    background-color: rgb(255, 17, 0);
+.message.failure{
+    /* background-color: rgb(255, 17, 0); */
+    background-color: #b92a1d;
     right: 10%;
 }
 

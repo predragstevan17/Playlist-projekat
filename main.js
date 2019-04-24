@@ -1,5 +1,10 @@
 const songList = document.getElementById('song-list');
-const number = 2;
+const max = 10;
+const clearAll = document.getElementsByClassName('clear-all')[0];
+clearAll.addEventListener('click',function(){
+    clearPlaylist();
+    this.style.display = 'none';
+})
 
 let songs;
 if(localStorage.length === 0){
@@ -12,7 +17,7 @@ else{
 window.addEventListener('load',init);
 
 function init(){
-    if(moreThan(songs,number)){
+    if(playlistLimit(songs,max)){
         disableInputs();
     }
     else{
@@ -38,7 +43,11 @@ function displaySongs(songs) {
         </tr>          
         `;
     })
+    if(!isPlaylistEmpty(songs)){
+        clearAll.style.display = 'block';
+    }
     // localStorage.setItem('songs',songs);
+    displayCount(songCount(songs));
 }
 
 window.addEventListener('load', displaySongs(songs));
@@ -56,7 +65,7 @@ function addSong() {
     const songTitle = document.getElementById('song-title').value;
     const score = document.getElementById('score').value;
     if(artist && songTitle && score){
-        if(!artistExists(songs,artist)){
+        if(!artistLimit(songs,artist)){
             const newSong = {
                 artist: artist,
                 song: songTitle,
@@ -66,22 +75,26 @@ function addSong() {
             songs.push(newSong);
             localStorage.setItem('songs',JSON.stringify(songs));
             displayMessage('Song added successfully!','success');
+            clearAll.style.display = 'block';
+            displayCount(songCount(songs));
 
         }
         else{
-            displayMessage('Only unique atrists please!','fail');
+            displayMessage('Artist name already exists!','failure');
         }
     }
     else{
         //prikazi poruku
-        displayMessage('All fields must be filled!','fail');
+        displayMessage('All fields must be filled out!','failure');
     }
-    if(moreThan(songs,number)){
+    if(playlistLimit(songs,max)){
         disableInputs();
     }
 }
 
 songList.addEventListener('click', function (event) {
+    //ikonica ne prepoznaje event(pointer-events: none), proledjuje ga dugmetu sa klasom remove
+    //remove postaje event target
     if (event.target.classList.contains('remove')) {
         removeSong(event.target);
     }
@@ -94,14 +107,18 @@ function removeSong(target) {
     })
     target.parentElement.parentElement.remove();
     localStorage.setItem('songs',JSON.stringify(songs));
+    displayCount(songCount(songs));
 
     displayMessage('Song deleted successfully!','success');
 
-    if(moreThan(songs,number)){
+    if(playlistLimit(songs,max)){
         disableInputs();
     }
     else{
         enableInputs();
+    }
+    if(isPlaylistEmpty(songs)){
+        clearAll.style.display = 'none';
     }
 }
 
@@ -114,8 +131,6 @@ function filterPlaylist(event){
    let trList = songList.querySelectorAll('TR');
    for(let i = 0; i < trList.length; i++){
        let tds = trList[i].querySelectorAll('TD');
-    //    let artistTd = tds[1];
-    //    let titleTd = tds[2];
        if(tds[1].innerText.toLowerCase().indexOf(query) !== -1 || tds[2].innerText.toLowerCase().indexOf(query) !== -1){
            //ostavi pesmu na spisku
             tds[2].parentElement.style.display = ''
@@ -129,14 +144,14 @@ function filterPlaylist(event){
 
 function sortByScore(songs){
     //sortiraj niz
-    songs.sort(function(a,b){
-        return b.score - a.score;
+    songs.sort(function(song1,song2){
+        return song2.score - song1.score;
     })
 
     //prikazi sortirani niz
 }
 
-function artistExists(songs,artist){
+function artistLimit(songs,artist){
     for(let i = 0; i < songs.length; i++){
         if(songs[i].artist.indexOf(artist) !== -1){
             //ne moze
@@ -146,8 +161,8 @@ function artistExists(songs,artist){
     return false;
 }
 
-function moreThan(songs,number){
-    if(songs.length >= number){
+function playlistLimit(songs,max){
+    if(songs.length >= max){
         return true;
     }
     else{
@@ -180,14 +195,32 @@ function displayMessage(text,style){
     if(style === 'success'){
         p.innerHTML = `<i class = "fas fa-check"></i>${text}`;
     }
-    else if(style === 'fail'){
+    else if(style === 'failure'){
         p.innerHTML = `<i class = "fas fa-times"></i>${text}`;
     }
     messageDiv.appendChild(p);
     document.body.appendChild(messageDiv);
     setTimeout(function(){
         messageDiv.remove();
-    },2000)
+    },3000)
 }
 
+function clearPlaylist(target){
+    songs = [];
+    localStorage.setItem('songs',JSON.stringify(songs));
+    displaySongs(songs);
+    displayMessage('Playlist cleared successfully','success');
+}
 
+function isPlaylistEmpty(songs){
+    return !songs.length;
+}
+
+function songCount(songs){
+    return songs.length;
+}
+
+function displayCount(number){
+    const p = document.getElementById('song-count');
+    p.innerText = `Number of songs: ${number}`;
+}
