@@ -168,3 +168,31 @@ body {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#181818', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
 }
+
+/*display message div*/
+
+.message{
+    position: absolute;
+    top: 10%;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message p{
+    display: flex;
+    align-items: center;
+}
+.message p .fa-check,.message p .fa-times{
+    margin-right: 10px;
+}
+
+.message.success{
+    background-color: #1aa34a;
+    left: 10%;
+}
+.message.fail{
+    background-color: rgb(255, 17, 0);
+    right: 10%;
+}
+
