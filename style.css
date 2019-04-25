@@ -35,11 +35,10 @@ h2 {
     margin: 20px auto;
     padding-left: 30px;
 }
-.title input::placeholder{
-    
-}
 
-#song-count{
+.title input::placeholder {}
+
+#song-count {
     text-align: center;
 }
 
@@ -48,7 +47,7 @@ h2 {
     display: inline-block;
 }
 
-.input-container::before{
+.input-container::before {
     position: absolute;
     top: 50%;
     left: 8px;
@@ -91,17 +90,18 @@ td {
     font-size: 16px;
 }
 
-#clear-all td{
-    border: none;  
+#clear-all td {
+    border: none;
 }
 
 tbody tr:hover {
     background-color: #333333;
 }
 
-#clear-all:hover{
+#clear-all:hover {
     background-color: transparent;
 }
+
 
 .remove {
     display: flex;
@@ -110,7 +110,7 @@ tbody tr:hover {
     width: 24px;
     height: 24px;
     border: none;
-    outline:none;
+    outline: none;
     font-size: 16px;
     border-radius: 50%;
     background-color: #4c4c4c;
@@ -118,15 +118,21 @@ tbody tr:hover {
     cursor: pointer;
 }
 
-.remove:hover{
+.remove:hover {
     background-color: #666;
     transform: scale(1.1);
 }
 
-.fa-times{
+.remove:active {
+    border: 3px #888 solid;
+    transform: scale(1.0);
+}
+
+.fa-times {
     pointer-events: none;
 }
-.clear-all{
+
+.clear-all {
     /* width: 100px; */
     background-color: #b92a1d;
     /* background-color: #19a4aa; */
@@ -141,10 +147,16 @@ tbody tr:hover {
     display: none;
 }
 
-.clear-all:hover{
-    background-color: #d33324;
+.clear-all:hover {
+    background-color: #d72e1e;
     transform: scale(1.1);
 }
+
+.clear-all:active {
+    background-color: #a3261a;
+    transform: scale(1.0);
+}
+
 #song-input-form {
     padding: 20px 0;
 }
@@ -184,6 +196,7 @@ tbody tr:hover {
 
 .enter-song:active {
     background-color: #1aa34a;
+    transform: scale(1.0);
 }
 
 body {
@@ -202,7 +215,7 @@ body {
 
 /*display message div*/
 
-.message{
+.message {
     position: absolute;
     top: 10%;
     color: #e4fff1;
@@ -210,21 +223,22 @@ body {
     border-radius: 5px;
 }
 
-.message p{
+.message p {
     display: flex;
     align-items: center;
 }
-.message p .fa-check,.message p .fa-times{
+
+.message p .fa-check, .message p .fa-times {
     margin-right: 10px;
 }
 
-.message.success{
+.message.success {
     background-color: #1aa34a;
     left: 10%;
 }
-.message.failure{
+
+.message.failure {
     /* background-color: rgb(255, 17, 0); */
     background-color: #b92a1d;
     right: 10%;
 }
-
