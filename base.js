@@ -50,3 +50,5 @@ let list = [
     { artist: 'The Clash', song: "Should I Stay or Should I Go", score: 72, id: 49 },
     { artist: 'Steve Vai', song: "Tender Surrender", score: 75, id: 50 }
 ];
+
+// localStorage.setItem('songs', JSON.stringify(list));
