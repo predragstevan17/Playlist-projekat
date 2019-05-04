@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # Playlist-projekat
-=======
+
 # Favorite Music Artists Playlist app made using HTML, CSS and JS
 
 # Description
@@ -16,4 +15,4 @@ An app that makes a list of your favorite musicians with a favorite song as an e
 # Possible upgrades
 
 Actually playing the songs using files (mp3, flac, m4a) or embedded youtube videos (iframe)
->>>>>>> 161ca23744438b7b386deb84ab2abb4b4dbc81b3
+
