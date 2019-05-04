@@ -102,6 +102,9 @@ tbody tr:hover {
     background-color: transparent;
 }
 
+.remove-td, .clear-all-td{
+    max-width: 100px;
+}
 
 .remove {
     display: flex;
@@ -116,6 +119,7 @@ tbody tr:hover {
     background-color: #4c4c4c;
     color: #dadada;
     cursor: pointer;
+    /* margin: auto; */
 }
 
 .remove:hover {
@@ -130,6 +134,10 @@ tbody tr:hover {
 
 .fa-times {
     pointer-events: none;
+}
+
+.clear-all-td{
+    text-align: right;
 }
 
 .clear-all {

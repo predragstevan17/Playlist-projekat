@@ -39,12 +39,12 @@ function displaySongs(songs) {
             <td>${song.artist}</td>
             <td>${song.song}</td>
             <td>${song.score}</td>
-            <td><button data-id = ${song.id} class='remove'><i class="fas fa-times"></i></button></td>
+            <td class="remove-td"><button data-id = ${song.id} class='remove'><i class="fas fa-times"></i></button></td>
         </tr>          
         `;
     })
     if (!isPlaylistEmpty(songs)) {
-        clearAll.style.display = 'block';
+        clearAll.style.display = 'inline-block';
     }
     // localStorage.setItem('songs',songs);
     displayCount(songCount(songs));
@@ -75,7 +75,7 @@ function addSong() {
             songs.push(newSong);
             localStorage.setItem('songs', JSON.stringify(songs));
             displayMessage('Song added successfully!', 'success');
-            clearAll.style.display = 'block';
+            clearAll.style.display = 'inline-block';
             displayCount(songCount(songs));
 
         }
