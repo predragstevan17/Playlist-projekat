@@ -1,5 +1,3 @@
-# Playlist-project
-
 # Favorite Music Artists Playlist app made using HTML, CSS and JS
 
 # Description
