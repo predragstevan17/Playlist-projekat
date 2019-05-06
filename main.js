@@ -93,7 +93,7 @@ function addSong() {
 }
 
 songList.addEventListener('click', function (event) {
-    //ikonica ne prepoznaje event(pointer-events: none), proledjuje ga dugmetu sa klasom remove
+    //ikonica ne prepoznaje event(pointer-events: none), prosledjuje ga dugmetu sa klasom remove
     //remove postaje event target
     if (event.target.classList.contains('remove')) {
         removeSong(event.target);

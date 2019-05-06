@@ -33,7 +33,7 @@ let list = [
     { artist: 'Jeff Buckley', song: "Forget Her", score: 78, id: 32 },
     { artist: 'Alanis Morissette', song: "You Oughta Know", score: 74, id: 33 },
     { artist: 'John Mayer', song: "Slow Dancing in a Burning Room", score: 79, id: 34 },
-    { artist: 'Gorillaz', song: "Every Melancholy We Reach is Hill", score: 80, id: 35 },
+    { artist: 'Gorillaz', song: "Every Planet We Reach Is Dead", score: 80, id: 35 },
     { artist: 'System of a Down', song: "Hypnotize", score: 77, id: 36 },
     { artist: 'Blondie', song: "Maria", score: 73, id: 37 },
     { artist: 'White Stripes', song: "Seven Nation Army", score: 75, id: 38 },
