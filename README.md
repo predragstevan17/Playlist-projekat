@@ -13,4 +13,3 @@ An app that makes a list of your favorite musicians with a favorite song as an e
 # Possible upgrades
 
 Actually playing the songs using files (mp3, flac, m4a) or embedded youtube videos (iframe)
-
